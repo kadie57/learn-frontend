@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Dosis', sans-serif;
+}
+.hero{
+    width: 80%;
+    margin:auto; 
+    /* rộng 80% trang và căn giữa */
+}
+.navbar{
+    margin: 30px auto;
+    /*cách element trên dưới 30px*/
+    display: flex;
+    /* giúp các phần tử sắp xếp nằm ngang, căn chỉnh theo trục */
+    align-items: center;
+    /* căn giữa theo chiều dọc */
+}
+ul{
+    flex: 1;
+    /*flex: các phân tử trên cùng 1 dòng, căn giữa theo cả 2 chiều
+    tự động xuống dòng nếu phần tử con không đủ chỗ
+    kích thước ptu con thay đổi linh động theo ptu cha */
+    text-align: right;
+}
+/* chỉnh sửa các đầu mục (li) trong danh sách (ul) */
+ul li{
+    display: inline-block;
+    /* các phần tử trên cùng 1 dòng, căn giữa theo chiều ngang, khó theo chiều dọc */
+    list-style: none;
+    margin: 0 25px;
+}
+/* chỉnh sửa từng phần tử kiểu a(gắn link) trong các mục (li) trong ds (ul) */
+ul li a{
+    text-decoration: none;
+    color:black;
+    padding: 0 10px;
+    position: relative;
+    /* cần có position thì kích thước của after sẽ được tính theo kích thước a, nếu ko sẽ tính theo body */
+}
+/* tạo phần tử đằng sau các phần tử a */
+ul li a::after{
+    content: '';
+    width: 0;
+    height: 10px;
+    background: #f14a60;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -55px;
+    transition: 0.5s;
+}
+/* lớp giả: khi đưa chuột đến nó thì mới áp dụng css */
+ul li a:hover::after{
+    width: 100%;
+}
+.navbar-icons img{
+    height: 25px;
+    margin-left: 40px;
+    cursor: pointer;
+}
+
+.navbar-icons{
+    margin-left: 40px;
+}
+.banner{
+    display: flex;
+    margin-top: 80px;
+}
+.left-column, .right-column{
+    /* kích thước cơ bản - lúc để nguyên */
+    flex-basis: 50%;
+}
+.right-column img{
+    width: 100%;
+}
+.search-box{
+    width: 45%;
+    display: flex;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #ddd;
+    margin: 10px 0 30px;
+}
+.search-box img{
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+}
+.search-box input{
+    width: 100%;
+    margin-left: 15px;
+    font-size: 17px;
+    border: 0;
+    outline: none;
+}
+.left-column h1{
+    font-size: 100px;
+}
+.left-column h3{
+    font-size: 35px;
+}
+span{
+    color: #f14a60;
+}
+.left-column p{
+    font-size: 14px;
+    color: #999;
+    margin: 50px 0;
+}
+.btn button{
+    padding: 7px 30px;
+    margin-right: 15px;
+    outline: none;
+    border: 1px solid #fb7381;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #fb7381;
+    background: transparent;
+}
+.btn .primary-btn{
+    background: linear-gradient(#fb7381, #f14a60);
+    box-shadow: 0 2px 15px rgba(248,38,103,0.26);
+    color: #fff;
+}
+.btn{
+    margin-bottom: 50px ;
+}
+.social-icons{
+    width: 200px;
+    text-align: center;
+    opacity: .4;
+    position: relative;
+    margin-left: 160px;
+}
+.social-icons img{
+    height: 20px;
+    margin: 0 14px;
+}
+.social-icons::after{
+    content: '';
+    width: 150px;
+    height: 1px;
+    background-color: #000;
+    position: absolute;
+    left: -160px;
+    top: 10px;
+
+}
+
